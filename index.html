@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080b24">
+<link rel="manifest" href="./manifest.json">
+<link rel="icon" href="./icon-192.png">
+<meta name="theme-color" content="#080b24">
+
+
+  <title>Welcome Santosh | YouTube</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      min-height: 100dvh;
+      overflow: hidden;
+      font-family: system-ui, Arial, sans-serif;
+      color: white;
+      background:
+        radial-gradient(ellipse at 10% 15%,
+          rgba(25, 105, 255, 0.35), transparent 38%),
+        radial-gradient(ellipse at 90% 85%,
+          rgba(168, 45, 255, 0.3), transparent 38%),
+        linear-gradient(135deg, #070b20, #101038 55%, #090b20);
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(2px);
+      pointer-events: none;
+      animation: float 7s ease-in-out infinite;
+    }
+
+    .orb.one {
+      width: 230px;
+      height: 230px;
+      background: linear-gradient(135deg,
+        #1768ff, transparent);
+      top: -90px;
+      left: -80px;
+    }
+
+    .orb.two {
+      width: 200px;
+      height: 200px;
+      background: linear-gradient(135deg,
+        #c026ff, transparent);
+      bottom: -80px;
+      right: -60px;
+      animation-delay: -3s;
+    }
+
+    .orb.three {
+      width: 90px;
+      height: 90px;
+      background: linear-gradient(135deg,
+        #386bff, #b72dff);
+      top: 13%;
+      right: 12%;
+      opacity: 0.6;
+      animation-delay: -2s;
+    }
+
+    .container {
+      width: min(100% - 36px, 430px);
+      text-align: center;
+      padding: 32px 22px;
+      position: relative;
+      z-index: 1;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 28px;
+      background: rgba(12, 15, 45, 0.52);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      box-shadow: 0 20px 80px rgba(0,0,0,0.35);
+      animation: appear 1s ease both;
+    }
+
+    .logo {
+      width: 76px;
+      height: 54px;
+      border-radius: 17px;
+      background: #ff0033;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 28px;
+      box-shadow: 0 0 35px rgba(255,0,51,0.25);
+    }
+
+    .play {
+      width: 0;
+      height: 0;
+      border-top: 11px solid transparent;
+      border-bottom: 11px solid transparent;
+      border-left: 18px solid white;
+      margin-left: 5px;
+    }
+
+    .eyebrow {
+      color: #b6c5ff;
+      font-size: 13px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: clamp(34px, 9vw, 48px);
+      line-height: 1.15;
+      letter-spacing: -1.5px;
+      font-weight: 800;
+    }
+
+    h1 span {
+      display: block;
+      margin-top: 5px;
+      background: linear-gradient(90deg,
+        #54b7ff, #a855f7, #e879f9);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .description {
+      color: #c6cbe0;
+      font-size: 15px;
+      line-height: 1.8;
+      margin: 22px auto 30px;
+      max-width: 290px;
+    }
+
+    .start-btn {
+      width: 100%;
+      max-width: 300px;
+      min-height: 58px;
+      border: 0;
+      border-radius: 50px;
+      background: linear-gradient(100deg,
+        #bd27f7, #6558ff, #328bff);
+      color: white;
+      font-size: 18px;
+      font-weight: 750;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(112, 67, 255, 0.3);
+      transition: transform 0.2s, box-shadow 0.2s;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .start-btn:active {
+      transform: scale(0.96);
+    }
+
+    .arrow {
+      display: inline-block;
+      margin-left: 10px;
+      transition: transform 0.2s;
+    }
+
+    .start-btn:hover .arrow {
+      transform: translateX(5px);
+    }
+
+    .footer {
+      margin-top: 32px;
+      font-size: 12px;
+      color: #939cbe;
+      letter-spacing: 1px;
+    }
+
+    .footer span {
+      color: #ff4d83;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-height: 600px) {
+      .container { padding: 18px; }
+      .logo { margin-bottom: 15px; }
+      .description { margin: 12px auto 18px; }
+      .footer { margin-top: 18px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="orb one"></div>
+  <div class="orb two"></div>
+  <div class="orb three"></div>
+
+  <main class="container">
+    <div class="logo" aria-label="Play logo">
+      <div class="play"></div>
+    </div>
+
+    <p class="eyebrow">Your personal space</p>
+
+    <h1>
+      Welcome
+      <span>Santosh</span>
+    </h1>
+
+    <p class="description">
+      Your next favorite video is waiting.
+      Sit back, relax, and enjoy your YouTube experience.
+    </p>
+
+    <button
+      class="start-btn"
+      onclick="startYouTube()"
+      type="button"
+    >
+      Start <span class="arrow">→</span>
+    </button>
+
+    <p class="footer">MADE FOR YOU <span>♥</span></p>
+  </main>
+
+  <script>
+    function startYouTube() {
+      window.location.href = "https://www.youtube.com/";
+    }
+
+    if ("serviceWorker" in navigator) {
+            window.addEventListener("load", () => {
+                navigator.serviceWorker.register("./sw.js");
+            });
+        }
+        
+  </script>
+</body>
+</html>
